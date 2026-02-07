@@ -1,12 +1,15 @@
-name: Basic CI
-on:
+name: CI
 
-   push:
-     branches: [ main ]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps: 
-      -uses: actions/checkout@04
-      -name: Run build
-      run: echo "CI is running"
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a test
+        run: echo "Build started"
