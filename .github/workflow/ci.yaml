@@ -1,0 +1,12 @@
+name: Basic CI
+on:
+
+   push:
+     branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      -uses: actions/checkout@04
+      -name: Run build
+      run: echo "CI is running"
